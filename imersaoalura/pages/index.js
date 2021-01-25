@@ -27,17 +27,22 @@ export default function Home() {
       <Head>
         <title>Quizz Studio Ghibli</title>
         <link rel="shortcut icon" href="/images/favicon.png" />
-        <meta property="og:image" content="https://i.imgur.com/92CcVFn.png" />
         <meta
-          name="twitter:title"
-          content="Você conhece as obras do Studio Ghibli? "
+          property="og:url"
+          content="https://imersao-alura-next-js.hugulima.vercel.app/"
         />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <meta name="twitter:title" content="Você conhece as obras do Studio Ghibli " />
         <meta
           name="twitter:description"
-          content=" A NextJS application implemented by Vercel, developed by Hugo Lima"
+          content=" A NextJS application implemented by Vercel, developed by Hugo Lima."
         />
-        <meta name="twitter:image" content="https://i.imgur.com/92CcVFn.png" />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:image"
+          content=" https://i.imgur.com/92CcVFn.png"
+        />
+        <meta name="twitter:card" content="summary_large_image"></meta>
       </Head>
       <BackgroundMask>
         <QuizContainer>
