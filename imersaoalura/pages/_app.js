@@ -2,6 +2,14 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 import db from "../db.json";
 
 const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: "OriginalSurfer";
+    src: url("/fonts/OriginalSurfer/OriginalSurfer.ttf");
+  }
+  @font-face {
+    font-family: "Poppins";
+    src: url("/fonts/Poppins/YuseiMagic-Regular.ttf");
+  }
   * {
     box-sizing: border-box;
   }

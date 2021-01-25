@@ -1,7 +1,8 @@
 {
-  "bg": "https://i.pinimg.com/originals/23/3f/00/233f00b59206fa74e2885510a09ee7de.jpg",
-  "title": "Quiz CSS da Alura",
-  "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
+  "bg": "https://i.imgur.com/GjxEpBz.png",
+  "quizLogo": "https://i.imgur.com/HPjtymN.png",
+  "title": "Quiz do incrível Studio Ghibli ✨",
+  "description": "Teste os seus conhecimentos sobre os personagens, contos e lugares do mágico universo Ghibli",
   "questions": [
     {
       "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
@@ -31,8 +32,8 @@
   ],
   "theme": {
     "colors": {
-      "primary": "#0d47a1",
-      "secondary": "#29b6f6",
+      "primary": "#3f51b5",
+      "secondary": "#ff9100",
       "mainBg": "#171B35",
       "contrastText": "#FFFFFF",
       "wrong": "#FF5722",

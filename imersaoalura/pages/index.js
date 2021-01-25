@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import db from "../db.json";
 
-import Widget from "../src/components/Widget/";
-import Footer from "../src/components/Footer/";
-import GithubCorner from "../src/components/GitHubCorner";
-import QuizBackground from "../src/components/QuizBackground/";
+import Widget from "../public/components/Widget/";
+import QuizLogo from "../public/components/QuizLogo/";
+import QuizBackground from "../public/components/QuizBackground/";
+import Footer from "../public/components/Footer/";
+import GithubCorner from "../public/components/GitHubCorner/index.js";
+import BackgroundMask from "../public/components/BackgroundMask/"
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -20,24 +22,30 @@ export const QuizContainer = styled.div`
 export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
-      <QuizContainer>
-        <Widget>
-          <Widget.Header>
-            <h1>The legend of zelda</h1>
-          </Widget.Header>
-          <Widget.Content>
-            <p>lorem</p>
-          </Widget.Content>
-        </Widget>
-        <Widget>
-          <Widget.Content>
-            <h1>Quizes da Galera</h1>
-            <p>lorem</p>
-          </Widget.Content>
-        </Widget>
-        <Footer />
+      <BackgroundMask>
+        <QuizContainer>
+          <QuizLogo />
+  
+          <Widget>
+            <Widget.Header>
+              <h1>{db.title}</h1>
+            </Widget.Header>
+            <Widget.Content>
+              <p>{db.description}</p>
+            </Widget.Content>
+          </Widget>
+  
+          <Widget>
+            <Widget.Content>
+              <h1>Quizes da Galera</h1>
+  
+              <p>Opss, ainda não achei...</p>
+            </Widget.Content>
+          </Widget>
+          <Footer />
+        </QuizContainer>
         <GithubCorner projectUrl="https://github.com/hugolima03" />
-      </QuizContainer>
+      </BackgroundMask>
     </QuizBackground>
   );
 }
