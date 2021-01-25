@@ -33,7 +33,7 @@ export default function Home() {
         />
         <meta name="twitter:card" content="summary_large_image" />
 
-        <meta name="twitter:title" content="Você conhece as obras do Studio Ghibli " />
+        <meta name="twitter:title" content="Você conhece as obras do Studio Ghibli?" />
         <meta
           name="twitter:description"
           content=" A NextJS application implemented by Vercel, developed by Hugo Lima."
