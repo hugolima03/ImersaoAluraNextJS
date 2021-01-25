@@ -36,7 +36,7 @@ export default function Home() {
         />
         <meta
           name="twitter:image"
-          content="blob:https://vercel.com/6228668d-cadc-4e93-8f84-1d630ab78047"
+          content="https://i.imgur.com/92CcVFn.png"
         />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
