@@ -29,12 +29,16 @@ export default function Home() {
           property="og:image"
           content="blob:https://vercel.com/d980caeb-f529-4403-be06-5a056cd13d51"
         />
-        <meta property="og:image:type" content="image/jpeg" />
-        <meta property="og:image:width" content="800" />
-        <meta property="og:image:height" content="600" />
-
-        <meta property="og:description" content="Você conhece as obras do Studio Ghibli?"></meta>
-
+        <meta name="twitter:title" content="Você conhece as obras do Studio Ghibli? " />
+        <meta
+          name="twitter:description"
+          content=" A NextJS application implemented by Vercel, developed by Hugo Lima"
+        />
+        <meta
+          name="twitter:image"
+          content="blob:https://vercel.com/6228668d-cadc-4e93-8f84-1d630ab78047"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <BackgroundMask>
         <QuizContainer>
