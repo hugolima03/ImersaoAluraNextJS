@@ -1,10 +1,43 @@
-import styled from 'styled-components'
+import styled from "styled-components";
+import db from "../db.json";
 
-const Titulo = styled.h1`
-  font-size: 50px;
-  color: ${({ theme }) => theme.colors.primary};
-`
+import Widget from "../src/components/Widget/";
+import Footer from "../src/components/Footer/";
+import GithubCorner from "../src/components/GitHubCorner";
+import QuizBackground from "../src/components/QuizBackground/";
+
+export const QuizContainer = styled.div`
+  width: 100%;
+  max-width: 350px;
+  padding-top: 45px;
+  margin: auto 10%;
+  @media screen and (max-width: 500px) {
+    margin: auto;
+    padding: 15px;
+  }
+`;
 
 export default function Home() {
-  return <Titulo>Minha página</Titulo>
+  return (
+    <QuizBackground backgroundImage={db.bg}>
+      <QuizContainer>
+        <Widget>
+          <Widget.Header>
+            <h1>The legend of zelda</h1>
+          </Widget.Header>
+          <Widget.Content>
+            <p>lorem</p>
+          </Widget.Content>
+        </Widget>
+        <Widget>
+          <Widget.Content>
+            <h1>Quizes da Galera</h1>
+            <p>lorem</p>
+          </Widget.Content>
+        </Widget>
+        <Footer />
+        <GithubCorner projectUrl="https://github.com/hugolima03" />
+      </QuizContainer>
+    </QuizBackground>
+  );
 }
