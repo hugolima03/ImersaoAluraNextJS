@@ -1,10 +1,9 @@
-import styled from "styled-components";
-import db from "../../../db.json";
+import styled from 'styled-components';
+import React from 'react';
+import db from '../../../db.json';
 
-import React from "react";
-
-function Logo({ className }) {
-  return <img src={db.quizLogo} width="320"/>;
+function Logo() {
+  return <img src={db.quizLogo} width="320" alt="Studio Ghibli" />;
 }
 
 const QuizLogo = styled(Logo)`

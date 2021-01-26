@@ -1,5 +1,7 @@
-import { createGlobalStyle, ThemeProvider } from "styled-components";
-import db from "../db.json";
+/* eslint-disable react/jsx-props-no-spreading */
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import Head from 'next/head';
+import db from '../db.json';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -31,13 +33,37 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
   }
-`
+`;
 
-const theme = db.theme;
+const { theme } = db;
 
+// eslint-disable-next-line react/prop-types
 export default function App({ Component, pageProps }) {
   return (
     <>
+      <Head>
+        <title>Quizz Studio Ghibli</title>
+        <link rel="shortcut icon" href="/images/favicon.png" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:site"
+          content="https://imersao-alura-next-js.hugulima.vercel.app/"
+        />
+        <meta name="twitter:creator" content="@hugulim_" />
+        <meta
+          name="twitter:title"
+          content="Você conhece as obras do Studio Ghibli?"
+        />
+        <meta
+          name="twitter:description"
+          content="A NextJS application implemented by Vercel, developed by Hugo Lima."
+        />
+        <meta
+          name="twitter:image"
+          content="https://i.imgur.com/92CcVFn.png"
+        />
+      </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Component {...pageProps} />
