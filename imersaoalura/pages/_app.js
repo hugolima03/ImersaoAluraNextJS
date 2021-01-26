@@ -8,10 +8,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: "OriginalSurfer";
     src: url("/fonts/OriginalSurfer/OriginalSurfer.ttf");
   }
-  @font-face {
-    font-family: "Poppins";
-    src: url("/fonts/Poppins/YuseiMagic-Regular.ttf");
-  }
   * {
     box-sizing: border-box;
   }
@@ -42,6 +38,11 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
         <title>Quizz Studio Ghibli</title>
         <link rel="shortcut icon" href="/images/favicon.png" />
 
@@ -59,10 +60,7 @@ export default function App({ Component, pageProps }) {
           name="twitter:description"
           content="A NextJS application implemented by Vercel, developed by Hugo Lima."
         />
-        <meta
-          name="twitter:image"
-          content="https://i.imgur.com/92CcVFn.png"
-        />
+        <meta name="twitter:image" content="https://i.imgur.com/92CcVFn.png" />
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />

@@ -12,17 +12,16 @@ const Widget = styled.div`
   h1,
   h2,
   h3 {
-    font-family: "OriginalSurfer";
-    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
     font-weight: 700;
     line-height: 1.5;
     margin-bottom: 0;
   }
   p {
-    font-family: "Poppins";
-    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
     font-weight: 400;
-    line-height: 1;
   }
 `;
 
