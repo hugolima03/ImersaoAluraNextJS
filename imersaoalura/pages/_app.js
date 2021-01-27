@@ -4,10 +4,6 @@ import Head from 'next/head';
 import db from '../db.json';
 
 const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: "OriginalSurfer";
-    src: url("/fonts/OriginalSurfer/OriginalSurfer.ttf");
-  }
   * {
     box-sizing: border-box;
   }

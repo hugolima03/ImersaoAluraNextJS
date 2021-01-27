@@ -3,7 +3,7 @@ import React from 'react';
 import db from '../../../db.json';
 
 function Logo() {
-  return <img src={db.quizLogo} width="320" alt="Studio Ghibli" />;
+  return <a href="/"><img src={db.quizLogo} width="320" alt="Studio Ghibli" /></a>;
 }
 
 const QuizLogo = styled(Logo)`

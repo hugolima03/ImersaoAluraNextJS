@@ -8,8 +8,9 @@ import QuizLogo from '../public/components/QuizLogo';
 import QuizBackground from '../public/components/QuizBackground';
 import GithubCorner from '../public/components/GitHubCorner';
 import BackgroundMask from '../public/components/BackgroundMask';
-import NameQuizForm from '../public/components/NameQuizForm';
 import QuizContainer from '../public/components/QuizContainer';
+import Input from '../public/components/Input';
+import Button from '../public/components/Button';
 
 export default function Home() {
   const router = useRouter();
@@ -33,15 +34,16 @@ export default function Home() {
             </Widget.Header>
             <Widget.Content>
               <p>{db.description}</p>
-              <NameQuizForm onSubmit={initQuizz}>
-                <input
+              <form onSubmit={initQuizz}>
+                <Input
                   onChange={onChangeHandleName}
                   placeholder="Diz ai seu nome para jogar :)"
+                  name="nomeDoUsuario"
                 />
-                <button type="submit" disabled={name.length === 0}>
+                <Button type="submit" disabled={name.length === 0}>
                   Jogar!
-                </button>
-              </NameQuizForm>
+                </Button>
+              </form>
             </Widget.Content>
           </Widget>
 
