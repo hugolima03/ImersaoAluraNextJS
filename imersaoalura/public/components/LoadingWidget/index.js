@@ -14,7 +14,7 @@ const LoadingWidgetBase = styled.div`
   justify-content: center;
   align-items: center;
 
-  background-color: rgba(100, 0, 0, 0.5);
+  background-color: rgba(63, 81, 181, .5);
 `;
 
 function LoadingWidget() {
