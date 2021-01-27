@@ -23,8 +23,8 @@ export default function QuizPage() {
 
   React.useEffect(() => {
     setTimeout(() => {
-      setScreenState(screenStates.LOADING);
-    }, 3 * 1000);
+      setScreenState(screenStates.QUIZ);
+    }, 5 * 1000);
   }, []);
 
   function handleSubmitQuiz() {
