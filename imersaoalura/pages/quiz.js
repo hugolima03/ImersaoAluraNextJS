@@ -2,21 +2,12 @@ import React from 'react';
 
 import db from '../db.json';
 
-import Widget from '../public/components/Widget';
+import LoadingWidget from '../public/components/LoadingWidget';
 import QuizBackground from '../public/components/QuizBackground';
 import GithubCorner from '../public/components/GitHubCorner';
 import BackgroundMask from '../public/components/BackgroundMask';
 import QuizContainer from '../public/components/QuizContainer';
 import QuestionWidget from '../public/components/QuestionWidget';
-
-function LoadingWidget() {
-  return (
-    <Widget>
-      <Widget.Header>Carregando...</Widget.Header>
-      <Widget.Content>[Desafio do Loading]</Widget.Content>
-    </Widget>
-  );
-}
 
 const screenStates = {
   QUIZ: 'QUIZ',
@@ -32,7 +23,7 @@ export default function QuizPage() {
 
   React.useEffect(() => {
     setTimeout(() => {
-      setScreenState(screenStates.QUIZ);
+      setScreenState(screenStates.LOADING);
     }, 1 * 1000);
   }, []);
 

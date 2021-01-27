@@ -5,7 +5,9 @@ import { useRouter } from 'next/router';
 import Widget from '../Widget';
 import Button from '../Button';
 
-function QuestionWidget({ question, totalQuestions, questionIndex, onSubmit }) {
+function QuestionWidget({
+  question, totalQuestions, questionIndex, onSubmit,
+}) {
   // const totalQuestions = db.questions.length;
   const router = useRouter();
   const questionId = `question__${questionIndex}`;
