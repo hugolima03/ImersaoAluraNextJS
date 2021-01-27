@@ -24,7 +24,7 @@ export default function QuizPage() {
   React.useEffect(() => {
     setTimeout(() => {
       setScreenState(screenStates.LOADING);
-    }, 1 * 1000);
+    }, 3 * 1000);
   }, []);
 
   function handleSubmitQuiz() {
@@ -39,6 +39,7 @@ export default function QuizPage() {
   return (
     <QuizBackground backgroundImage={db.bg}>
       <BackgroundMask>
+        {screenState === screenStates.LOADING && <LoadingWidget />}
         <QuizContainer>
           {screenState === screenStates.QUIZ && (
             <QuestionWidget
@@ -48,7 +49,7 @@ export default function QuizPage() {
               onSubmit={handleSubmitQuiz}
             />
           )}
-          {screenState === screenStates.LOADING && <LoadingWidget />}
+
           {screenState === screenStates.RESULT && <div>X</div>}
         </QuizContainer>
         <GithubCorner projectUrl="https://github.com/hugolima03" />
