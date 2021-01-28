@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import Lottie from 'react-lottie';
 import styled from 'styled-components';
-import animationData from './loadingCat.json';
+import animationData from './41791-loading-wrong.json';
 
-const LoadingWidgetBase = styled.div`
+const WrongAnswerBase = styled.div`
   display: flex;
   width: 100%;
   height: 100vh;
@@ -17,27 +17,33 @@ const LoadingWidgetBase = styled.div`
   background-color: rgba(0, 0, 0, 0.6);
 
   div {
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
   h2 {
-    display: flex;
-    justify-content: center;
-    margin-top: 0;
     font-family: 'Poppins', sans-serif;
+  }
+
+  @media screen and (max-width: 500px) {
+    display: contents;
+
+    div {
+      margin-left: -29px;
+      margin-top: 25px;
+    }
   }
 `;
 
-function LoadingWidget() {
+function WrongAnswer() {
   const [animationState] = useState({
     isStoped: false,
     isPaused: false,
   });
   const defaultOptions = {
-    loop: true,
+    loop: false,
     autoplay: true,
     animationData,
     rendererSettings: {
@@ -46,7 +52,7 @@ function LoadingWidget() {
   };
 
   return (
-    <LoadingWidgetBase>
+    <WrongAnswerBase>
       <div>
         <Lottie
           options={defaultOptions}
@@ -55,10 +61,9 @@ function LoadingWidget() {
           isStopped={animationState.isStoped}
           isPaused={animationState.isPaused}
         />
-        <h2>Carregando...</h2>
       </div>
-    </LoadingWidgetBase>
+    </WrongAnswerBase>
   );
 }
 
-export default LoadingWidget;
+export default WrongAnswer;

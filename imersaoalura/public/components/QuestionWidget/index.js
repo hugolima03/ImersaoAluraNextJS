@@ -5,6 +5,8 @@ import { useRouter } from 'next/router';
 import Widget from '../Widget';
 import Button from '../Button';
 import AlternativesForm from '../AlternativesForm';
+import CorrectAnswer from '../CorrectAnswer';
+import WrongAnswer from '../WrongAnswer';
 
 function QuestionWidget({
   question, totalQuestions, questionIndex, onSubmit, addResult,
@@ -79,8 +81,8 @@ function QuestionWidget({
           <Button type="submit" disabled={!hasAlternativeSelected}>
             Confirmar
           </Button>
-          {isQuestSubmited && isCorrect && <p>Você acertou!</p>}
-          {isQuestSubmited && !isCorrect && <p>Você Errou!</p>}
+          {isQuestSubmited && isCorrect && <CorrectAnswer />}
+          {isQuestSubmited && !isCorrect && <WrongAnswer />}
         </AlternativesForm>
       </Widget.Content>
     </Widget>
