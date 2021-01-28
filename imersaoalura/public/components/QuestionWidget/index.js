@@ -4,13 +4,17 @@ import { useRouter } from 'next/router';
 
 import Widget from '../Widget';
 import Button from '../Button';
+import AlternativesForm from '../AlternativesForm';
 
 function QuestionWidget({
-  question, totalQuestions, questionIndex, onSubmit,
+  question, totalQuestions, questionIndex, onSubmit, addResult,
 }) {
-  // const totalQuestions = db.questions.length;
   const router = useRouter();
+  const [selectedAlternative, setSelectedAlternative] = React.useState(undefined);
+  const [isQuestSubmited, setIsQuestionSubmited] = React.useState(false);
+  const isCorrect = selectedAlternative === question.answer;
   const questionId = `question__${questionIndex}`;
+  const hasAlternativeSelected = selectedAlternative !== undefined;
   return (
     <Widget>
       <Widget.Header>
@@ -37,32 +41,47 @@ function QuestionWidget({
       <Widget.Content>
         <h2>{question.title}</h2>
         <p>{question.description}</p>
-        <form
+        <AlternativesForm
           onSubmit={(event) => {
             event.preventDefault();
-            onSubmit();
+            setIsQuestionSubmited(true);
+            setTimeout(() => {
+              addResult(isCorrect);
+              onSubmit();
+              setIsQuestionSubmited(false);
+              setSelectedAlternative(undefined);
+            }, 3 * 1000);
           }}
         >
           {question.alternatives.map((alternative, alternativeIndex) => {
             const alternativeId = `alternative__${alternativeIndex}`;
+            const alternativeStatus = isCorrect ? 'SUCCESS' : 'ERROR';
+            const isSelected = selectedAlternative === alternativeIndex;
             return (
               <Widget.Topic
                 as="label"
                 key={alternativeId}
                 htmlFor={alternativeId}
+                data-selected={isSelected}
+                data-status={isQuestSubmited && alternativeStatus}
               >
                 <input
                   style={{ display: 'none' }}
                   id={alternativeId}
-                  type="radio"
                   name={questionId}
+                  onChange={() => setSelectedAlternative(alternativeIndex)}
+                  type="radio"
                 />
                 {alternative}
               </Widget.Topic>
             );
           })}
-          <Button type="submit">Confirmar</Button>
-        </form>
+          <Button type="submit" disabled={!hasAlternativeSelected}>
+            Confirmar
+          </Button>
+          {isQuestSubmited && isCorrect && <p>Você acertou!</p>}
+          {isQuestSubmited && !isCorrect && <p>Você Errou!</p>}
+        </AlternativesForm>
       </Widget.Content>
     </Widget>
   );
@@ -74,6 +93,7 @@ QuestionWidget.propTypes = {
   totalQuestions: PropTypes.number.isRequired,
   questionIndex: PropTypes.number.isRequired,
   onSubmit: PropTypes.func.isRequired,
+  addResult: PropTypes.func.isRequired,
 };
 
 export default QuestionWidget;
