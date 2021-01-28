@@ -45,6 +45,9 @@ export default function QuizPage() {
   return (
     <QuizBackground backgroundImage={db.bg}>
       <BackgroundMask>
+        {screenState === screenStates.RESULT && (
+          <ResultWidget results={results} />
+        )}
         {screenState === screenStates.LOADING && <LoadingWidget />}
         <QuizContainer>
           {screenState === screenStates.QUIZ && (
@@ -57,9 +60,6 @@ export default function QuizPage() {
             />
           )}
         </QuizContainer>
-        {screenState === screenStates.RESULT && (
-          <ResultWidget results={results} />
-        )}
         <GithubCorner projectUrl="https://github.com/hugolima03" />
       </BackgroundMask>
     </QuizBackground>
