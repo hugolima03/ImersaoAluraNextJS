@@ -37,20 +37,22 @@ const ResultWidgetBase = styled.div`
 const niceResult = styled.div``;
 
 function ResultWidget({ results }) {
-  const router = useRouter();
+  // const router = useRouter();
   // const name = router.query.name.toUpperCase();
   const { width, height } = useWindowSize();
 
   return (
     <>
-      <Confetti width={width} height={height} recycle={false} />
+      <Confetti width={width} height={height} />
       <ResultWidgetBase>
         <niceResult>
           <h1>PARABÉNS 🎉🥳!</h1>
           <p>
             Você acertou
+            {' '}
             {results.filter((x) => x).length}
-            perguntas
+            {' '}
+            pergunta(s)
           </p>
           <ul>
             {results.map((result, index) => (
